@@ -1,0 +1,23 @@
+.timer__page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer__counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  font-size: var(--bg-font-size);
+}
+
+.timer__btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timer__reverse-settings {
+  padding-top: 10px;
+}

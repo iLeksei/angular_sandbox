@@ -1,0 +1,7 @@
+.menu__container {
+  height: var(--header-height, 6%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}

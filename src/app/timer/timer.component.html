@@ -1,0 +1,35 @@
+<div class="timer__page page">
+  <mat-card>
+    <mat-card-title>Timer</mat-card-title>
+    <mat-card-subtitle>
+      <mat-checkbox [(ngModel)]="isReverseMode" class="example-ripple-checkbox">Enable reverse mode</mat-checkbox>
+    </mat-card-subtitle>
+    <mat-card-content>
+      <section class="timer__counter">
+        {{isReverseMode ? reverseCounter : counter}}
+      </section>
+      <section class="timer__btn-group">
+        <button id="timer-start-btn" (click)="start();" mat-stroked-button>Start</button>
+        <button id="timer-stop-btn" (click)="stop();" mat-stroked-button>Stop</button>
+        <button id="timer-reset-btn" (click)="reset()" mat-stroked-button>Reset</button>
+      </section>
+      <section class="timer__reverse-settings" [hidden]="!isReverseMode">
+        <mat-form-field appearance="standard">
+          <mat-label>Initial value</mat-label>
+          <input
+            matInput
+            name="reverseCounter"
+            id="reverseCounter"
+            type="number"
+            placeholder="init value"
+            [(ngModel)]="reverseCounter"
+          >
+<!--          // #reverseCounter-->
+<!--          (input)="changeReverseCounter(reverseCounter.value)"-->
+<!--             #reverseCounter-->
+<!--            (input)="changeReverseCounter(reverseCounter.value);"-->
+        </mat-form-field>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</div>

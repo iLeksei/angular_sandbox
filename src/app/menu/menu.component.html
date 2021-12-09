@@ -1,0 +1,12 @@
+<nav class="menu__container">
+  <a routerLink="/" mat-icon-button color="primary" aria-label="home-icon">
+    <mat-icon>home</mat-icon>
+  </a>
+  <button class="m-font-size" mat-button [matMenuTriggerFor]="aboveMenu">Components</button>
+  <mat-menu #aboveMenu="matMenu" yPosition="above">
+    <a routerLink="/counter" mat-menu-item>Counter</a>
+    <a routerLink="/timer" mat-menu-item>Timer</a>
+    <a routerLink="/dynamic-form" mat-menu-item>Dynamic form</a>
+  </mat-menu>
+</nav>
+<mat-divider></mat-divider>

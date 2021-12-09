@@ -1,0 +1,13 @@
+.counter__page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter__counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  font-size: var(--bg-font-size);
+}
