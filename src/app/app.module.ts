@@ -18,6 +18,8 @@ import { TimerComponent } from './timer/timer.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
+import { InteractionParentComponent } from './interaction-demo/interaction-parent/interaction-parent.component';
+import { InteractionChildComponent } from './interaction-child/interaction-child.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import {FormsModule} from "@angular/forms";
     MenuComponent,
     FooterComponent,
     TimerComponent,
+    InteractionParentComponent,
+    InteractionChildComponent,
   ],
   imports: [
     BrowserModule,

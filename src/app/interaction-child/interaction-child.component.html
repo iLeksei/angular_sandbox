@@ -1,0 +1,12 @@
+<div class="interaction-child__container">
+  <mat-card>
+    <mat-card-title>{{hobbiesTitle}}</mat-card-title>
+    <mat-card-content>
+      <section class="interaction-child__content">
+        <div class="interaction-child__hobby" *ngFor="let hobby of hobbies">
+          {{hobby}}
+        </div>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</div>
