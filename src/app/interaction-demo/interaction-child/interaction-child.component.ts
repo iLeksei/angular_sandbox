@@ -7,12 +7,20 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class InteractionChildComponent implements OnInit {
 
-  @Input() hobbiesTitle: string = "";
+  private _hobbiesTitle: string = "";
   @Input() hobbies: string[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  @Input() set hobbiesTitle(val: any) {
+    this._hobbiesTitle = val ? val.toUpperCase() : "";
+  }
+
+  get hobbiesTitle() {
+    return this._hobbiesTitle;
   }
 
 }
