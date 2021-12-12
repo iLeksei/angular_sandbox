@@ -9,10 +9,14 @@ export class InteractionParentComponent implements OnInit {
 
   hobbies: string[] = ['Judo', 'Programming', 'Hiking', 'Music'];
   hobbiesTitle: string = "Hobbies:";
+  areHobbiesSelected: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onChildClick($event: string) {
+    console.log($event)
+  }
 }

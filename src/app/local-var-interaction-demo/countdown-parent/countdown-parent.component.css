@@ -1,0 +1,11 @@
+.countdown__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown__btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

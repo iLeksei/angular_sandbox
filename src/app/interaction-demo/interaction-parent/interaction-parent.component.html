@@ -1,3 +1,14 @@
 <div class="interaction-parent__container page">
-  <app-interaction-child [hobbies]="hobbies" [hobbiesTitle]="hobbiesTitle" ></app-interaction-child>
+  <mat-card>
+    <mat-card-title>Interaction</mat-card-title>
+    <mat-card-subtitle>
+      <mat-checkbox [(ngModel)]="areHobbiesSelected" class="interaction-parent__checkbox">Select all</mat-checkbox>
+    </mat-card-subtitle>
+    <app-interaction-child
+      [areHobbiesSelected]="areHobbiesSelected"
+      [hobbies]="hobbies"
+      [hobbiesTitle]="hobbiesTitle"
+      (hobbyEvent)="onChildClick($event)"
+    ></app-interaction-child>
+  </mat-card>
 </div>

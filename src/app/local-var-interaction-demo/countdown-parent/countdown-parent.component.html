@@ -1,0 +1,15 @@
+<div class="countdown__container page">
+  <mat-card>
+    <mat-card-title>Local var Interaction</mat-card-title>
+    <mat-card-subtitle>{{timer.counter}}</mat-card-subtitle>
+    <mat-card-content>
+      <section class="countdown__btn-group">
+        <button (click)="timer.start()" mat-stroked-button>start</button>
+        <button (click)="timer.reset()" mat-stroked-button>reset</button>
+      </section>
+      <section class="countdown__content">
+        <app-countdown-timer #timer></app-countdown-timer>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</div>

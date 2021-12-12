@@ -19,7 +19,9 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import { InteractionParentComponent } from './interaction-demo/interaction-parent/interaction-parent.component';
-import { InteractionChildComponent } from './interaction-child/interaction-child.component';
+import { InteractionChildComponent } from './interaction-demo/interaction-child/interaction-child.component';
+import { CountdownTimerComponent } from './local-var-interaction-demo/countdown-timer/countdown-timer.component';
+import { CountdownParentComponent } from './local-var-interaction-demo/countdown-parent/countdown-parent.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { InteractionChildComponent } from './interaction-child/interaction-child
     TimerComponent,
     InteractionParentComponent,
     InteractionChildComponent,
+    CountdownTimerComponent,
+    CountdownParentComponent,
   ],
   imports: [
     BrowserModule,

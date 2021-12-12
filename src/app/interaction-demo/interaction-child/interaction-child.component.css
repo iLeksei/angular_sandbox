@@ -15,3 +15,11 @@
 .timer__reverse-settings {
   padding-top: 10px;
 }
+
+.interaction-child__hobby:hover {
+  cursor: pointer;
+}
+
+.interaction-child__hobby-clicked {
+  text-decoration: underline;
+}
