@@ -1,0 +1,21 @@
+<div class="interaction-service__container page">
+  <mat-card>
+    <mat-card-title>Interaction via service</mat-card-title>
+    <mat-card-subtitle>Mission Control</mat-card-subtitle>
+    <mat-card-content>
+      <section class="interaction-service__btn-group">
+        <button (click)="announce()" mat-stroked-button>Announce mission</button>
+      </section>
+      <section class="interaction-service__content">
+        <app-astronaut
+          *ngFor="let astronaut of astronauts"
+          [astronaut]="astronaut">
+        </app-astronaut>
+        <h3>History:</h3>
+        <ul>
+          <li class="interaction-service__event" *ngFor="let event of history">{{event}}</li>
+        </ul>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</div>

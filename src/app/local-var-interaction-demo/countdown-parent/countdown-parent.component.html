@@ -10,6 +10,11 @@
       <section class="countdown__content">
         <app-countdown-timer #timer></app-countdown-timer>
       </section>
+      <div>With @ViewChild</div>
+      <section class="countdown__btn-group">
+        <button (click)="start()" mat-stroked-button>start</button>
+        <button (click)="reset()" mat-stroked-button>reset</button>
+      </section>
     </mat-card-content>
   </mat-card>
 </div>

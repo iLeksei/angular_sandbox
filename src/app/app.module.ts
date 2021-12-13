@@ -22,6 +22,8 @@ import { InteractionParentComponent } from './interaction-demo/interaction-paren
 import { InteractionChildComponent } from './interaction-demo/interaction-child/interaction-child.component';
 import { CountdownTimerComponent } from './local-var-interaction-demo/countdown-timer/countdown-timer.component';
 import { CountdownParentComponent } from './local-var-interaction-demo/countdown-parent/countdown-parent.component';
+import { MissionControlComponent } from './interaction-via-service/mission-control/mission-control.component';
+import { AstronautComponent } from './interaction-via-service/astronaut/astronaut.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { CountdownParentComponent } from './local-var-interaction-demo/countdown
     InteractionChildComponent,
     CountdownTimerComponent,
     CountdownParentComponent,
+    MissionControlComponent,
+    AstronautComponent,
   ],
   imports: [
     BrowserModule,
