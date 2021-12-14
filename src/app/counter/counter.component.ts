@@ -8,6 +8,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 export class CounterComponent implements OnInit {
 
   counter: number = 0;
+  title: string = "Counter";
 
   constructor() { }
 

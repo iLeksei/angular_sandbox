@@ -1,15 +1,11 @@
-<div class="counter__page page">
-  <mat-card>
-    <mat-card-title>Counter</mat-card-title>
-    <mat-card-content>
-      <section class="counter__counter">
-        {{counter}}
-      </section>
-      <section class="counter__btn-group">
-        <button id="counter-increment-btn" (click)="increment();" mat-stroked-button>Start</button>
-        <button id="counter-decrement-btn" (click)="decrement();" mat-stroked-button>Decrement</button>
-        <button id="counter-reset-btn" (click)="reset()" mat-stroked-button>Reset</button>
-      </section>
-    </mat-card-content>
-  </mat-card>
-</div>
+<app-card [title]="title">
+  <section class="counter__counter">
+    {{counter}}
+  </section>
+  <section class="counter__btn-group">
+    <button id="counter-increment-btn" (click)="increment();" mat-stroked-button>Increment</button>
+    <button id="counter-decrement-btn" (click)="decrement();" mat-stroked-button>Decrement</button>
+    <button id="counter-reset-btn" (click)="reset()" mat-stroked-button>Reset</button>
+  </section>
+  <span footer>.</span>
+</app-card>

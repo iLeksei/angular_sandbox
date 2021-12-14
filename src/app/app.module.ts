@@ -24,6 +24,12 @@ import { CountdownTimerComponent } from './local-var-interaction-demo/countdown-
 import { CountdownParentComponent } from './local-var-interaction-demo/countdown-parent/countdown-parent.component';
 import { MissionControlComponent } from './interaction-via-service/mission-control/mission-control.component';
 import { AstronautComponent } from './interaction-via-service/astronaut/astronaut.component';
+import { CardComponent } from './card/card.component';
+import { TemplateParentComponent } from './interaction-via-template/template-parent/template-parent.component';
+import { TemplateChildComponent } from './interaction-via-template/template-child/template-child.component';
+import { ZippyContentDirective } from './directives/zippy-content.directive';
+import {CommonModule} from "@angular/common";
+import { TemplateDemoComponent } from './interaction-via-template/template-demo/template-demo.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +44,11 @@ import { AstronautComponent } from './interaction-via-service/astronaut/astronau
     CountdownParentComponent,
     MissionControlComponent,
     AstronautComponent,
+    CardComponent,
+    TemplateParentComponent,
+    TemplateChildComponent,
+    ZippyContentDirective,
+    TemplateDemoComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +64,7 @@ import { AstronautComponent } from './interaction-via-service/astronaut/astronau
     MatCheckboxModule,
     MatInputModule,
     FormsModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

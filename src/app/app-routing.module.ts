@@ -5,6 +5,7 @@ import {TimerComponent} from "./timer/timer.component";
 import {InteractionParentComponent} from "./interaction-demo/interaction-parent/interaction-parent.component";
 import {CountdownParentComponent} from "./local-var-interaction-demo/countdown-parent/countdown-parent.component";
 import {MissionControlComponent} from "./interaction-via-service/mission-control/mission-control.component";
+import {TemplateDemoComponent} from "./interaction-via-template/template-demo/template-demo.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: "interaction-parent-child", component: InteractionParentComponent },
   { path: "local-var-interaction", component: CountdownParentComponent },
   { path: "interaction-via-service", component: MissionControlComponent },
+  { path: "interaction-via-template", component: TemplateDemoComponent },
 ];
 
 @NgModule({

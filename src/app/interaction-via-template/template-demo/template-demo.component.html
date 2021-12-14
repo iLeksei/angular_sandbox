@@ -1,0 +1,10 @@
+<app-card title="Interaction via template">
+  <section>
+    <mat-checkbox [(ngModel)]="showGreeting" class="show-greeting-checkbox">Show greeting</mat-checkbox>
+    <app-template-parent [showGreeting]="showGreeting">
+      <ng-template appZippyContent>
+        <app-template-child></app-template-child>
+      </ng-template>
+    </app-template-parent>
+  </section>
+</app-card>

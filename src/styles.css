@@ -15,4 +15,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .page {
   height: calc(100% - var(--header-height) - var(--footer-height));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
