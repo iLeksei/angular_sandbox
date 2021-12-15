@@ -30,6 +30,13 @@ import { TemplateChildComponent } from './interaction-via-template/template-chil
 import { ZippyContentDirective } from './directives/zippy-content.directive';
 import {CommonModule} from "@angular/common";
 import { TemplateDemoComponent } from './interaction-via-template/template-demo/template-demo.component';
+import { AdDirective } from './directives/ad.directive';
+import { AdBannerComponent } from './dynamic-content-demo-components/ad-banner/ad-banner.component';
+import { AdComponent } from './dynamic-content-demo-components/ad/ad.component';
+import {DynamicContentDemoComponent} from "./dynamic-content-demo-components/dinamic-content-demo/dynamic-content-demo.component";
+import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
+import {HttpClientModule} from "@angular/common/http";
+import {InMemoryDataService} from "./services/in-memory-data.service";
 
 @NgModule({
   declarations: [
@@ -49,6 +56,10 @@ import { TemplateDemoComponent } from './interaction-via-template/template-demo/
     TemplateChildComponent,
     ZippyContentDirective,
     TemplateDemoComponent,
+    AdDirective,
+    DynamicContentDemoComponent,
+    AdBannerComponent,
+    AdComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +76,10 @@ import { TemplateDemoComponent } from './interaction-via-template/template-demo/
     MatInputModule,
     FormsModule,
     CommonModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {dataEncapsulation: false}
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent]

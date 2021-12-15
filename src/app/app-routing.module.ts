@@ -6,6 +6,7 @@ import {InteractionParentComponent} from "./interaction-demo/interaction-parent/
 import {CountdownParentComponent} from "./local-var-interaction-demo/countdown-parent/countdown-parent.component";
 import {MissionControlComponent} from "./interaction-via-service/mission-control/mission-control.component";
 import {TemplateDemoComponent} from "./interaction-via-template/template-demo/template-demo.component";
+import {DynamicContentDemoComponent} from "./dynamic-content-demo-components/dinamic-content-demo/dynamic-content-demo.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: "local-var-interaction", component: CountdownParentComponent },
   { path: "interaction-via-service", component: MissionControlComponent },
   { path: "interaction-via-template", component: TemplateDemoComponent },
+  { path: "dynamic-content-demo", component: DynamicContentDemoComponent },
 ];
 
 @NgModule({

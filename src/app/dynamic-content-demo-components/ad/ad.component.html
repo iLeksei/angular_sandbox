@@ -1,0 +1,9 @@
+<div class="ad__container">
+  <div *ngIf="data; then adData; else notFoundAd"></div>
+  <ng-template #adData>
+    <h3>{{data}}</h3>
+  </ng-template>
+  <ng-template #notFoundAd>
+    <h3>Data not found :(</h3>
+  </ng-template>
+</div>

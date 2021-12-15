@@ -1,0 +1,13 @@
+.ad__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: lightgreen;
+  color: black;
+  height: inherit;
+  width: inherit;
+}
+
