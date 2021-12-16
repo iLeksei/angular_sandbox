@@ -37,6 +37,8 @@ import {DynamicContentDemoComponent} from "./dynamic-content-demo-components/din
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {HttpClientModule} from "@angular/common/http";
 import {InMemoryDataService} from "./services/in-memory-data.service";
+import { PopupComponent } from './custom-component-demo/popup/popup.component';
+import { CustomComponentDemoComponent } from './custom-component-demo/custom-component-demo.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import {InMemoryDataService} from "./services/in-memory-data.service";
     DynamicContentDemoComponent,
     AdBannerComponent,
     AdComponent,
+    PopupComponent,
+    CustomComponentDemoComponent,
   ],
   imports: [
     BrowserModule,

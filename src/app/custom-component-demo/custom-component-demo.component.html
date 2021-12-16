@@ -1,0 +1,10 @@
+<app-card title="Custom Popup component">
+  <section>
+    <mat-form-field appearance="standard">
+      <mat-label>Initial value</mat-label>
+      <input matInput id="popup-message" placeholder="message..." #message>
+    </mat-form-field>
+    <button (click)="popupService.showAsComponent(message.value)" mat-stroked-button>Show as component</button>
+    <button (click)="popupService.showAsElement(message.value)" mat-stroked-button>Show as element</button>
+  </section>
+</app-card>
