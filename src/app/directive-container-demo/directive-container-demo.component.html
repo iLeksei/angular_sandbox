@@ -1,0 +1,19 @@
+<app-card  title="Ng-container with directive:">
+  <section class="select-container">
+    <mat-checkbox [(ngModel)]="filterBanned" appHighLight>Filter banned users</mat-checkbox>
+    <mat-form-field appearance="standard">
+      <mat-label>Select user</mat-label>
+      <mat-select  [(ngModel)]="selectedUser">
+        <ng-container *ngFor="let user of users">
+          <ng-container *ngIf="filterBanned ? !user.isBanned : true">
+            <mat-option value="user">{{user.username | uppercase }}</mat-option>
+          </ng-container>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </section>
+  <section clss="hidden-directive-demo-container">
+    <ng-container *appHidden="filterBanned" >users was filtered</ng-container>
+    <ng-container *appHidden="!filterBanned">users are not filtered</ng-container>
+  </section>
+</app-card>

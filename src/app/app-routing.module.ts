@@ -8,6 +8,7 @@ import {MissionControlComponent} from "./interaction-via-service/mission-control
 import {TemplateDemoComponent} from "./interaction-via-template/template-demo/template-demo.component";
 import {DynamicContentDemoComponent} from "./dynamic-content-demo-components/dinamic-content-demo/dynamic-content-demo.component";
 import {CustomComponentDemoComponent} from "./custom-component-demo/custom-component-demo.component";
+import {DirectiveContainerDemoComponent} from "./directive-container-demo/directive-container-demo.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: "interaction-via-template", component: TemplateDemoComponent },
   { path: "dynamic-content-demo", component: DynamicContentDemoComponent },
   { path: "custom-component-demo", component: CustomComponentDemoComponent },
+{ path: "directive-container-demo", component: DirectiveContainerDemoComponent },
 ];
 
 @NgModule({

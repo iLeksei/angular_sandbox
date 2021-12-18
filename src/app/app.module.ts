@@ -39,6 +39,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {InMemoryDataService} from "./services/in-memory-data.service";
 import { PopupComponent } from './custom-component-demo/popup/popup.component';
 import { CustomComponentDemoComponent } from './custom-component-demo/custom-component-demo.component';
+import { DirectiveContainerDemoComponent } from './directive-container-demo/directive-container-demo.component';
+import {MatSelectModule} from "@angular/material/select";
+import { EventInterceptorDirectiveDirective } from './directive-container-demo/event-interceptor-directive.directive';
+import { HiddenDirective } from './directive-container-demo/hidden.directive';
 
 @NgModule({
   declarations: [
@@ -64,6 +68,9 @@ import { CustomComponentDemoComponent } from './custom-component-demo/custom-com
     AdComponent,
     PopupComponent,
     CustomComponentDemoComponent,
+    DirectiveContainerDemoComponent,
+    EventInterceptorDirectiveDirective,
+    HiddenDirective,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +84,7 @@ import { CustomComponentDemoComponent } from './custom-component-demo/custom-com
     MatDividerModule,
     MatGridListModule,
     MatCheckboxModule,
+    MatSelectModule,
     MatInputModule,
     FormsModule,
     CommonModule,
@@ -84,7 +92,7 @@ import { CustomComponentDemoComponent } from './custom-component-demo/custom-com
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false}
     ),
-  ],
+],
   providers: [],
   bootstrap: [AppComponent]
 })

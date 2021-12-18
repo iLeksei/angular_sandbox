@@ -1,0 +1,8 @@
+.select-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.directive-true {
+  font-weight: bold;
+}
