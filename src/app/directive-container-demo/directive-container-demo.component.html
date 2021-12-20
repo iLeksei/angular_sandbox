@@ -6,14 +6,14 @@
       <mat-select  [(ngModel)]="selectedUser">
         <ng-container *ngFor="let user of users">
           <ng-container *ngIf="filterBanned ? !user.isBanned : true">
-            <mat-option value="user">{{user.username | uppercase }}</mat-option>
+            <mat-option value="prouser">{{user.username | uppercase }}</mat-option>
           </ng-container>
         </ng-container>
       </mat-select>
     </mat-form-field>
   </section>
   <section clss="hidden-directive-demo-container">
-    <ng-container *appHidden="filterBanned" >users was filtered</ng-container>
+    <ng-container  *appHidden="filterBanned" >users was filtered</ng-container>
     <ng-container *appHidden="!filterBanned">users are not filtered</ng-container>
   </section>
 </app-card>

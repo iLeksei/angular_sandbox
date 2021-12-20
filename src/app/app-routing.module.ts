@@ -11,7 +11,7 @@ import {CustomComponentDemoComponent} from "./custom-component-demo/custom-compo
 import {DirectiveContainerDemoComponent} from "./directive-container-demo/directive-container-demo.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: '', pathMatch: 'full' },
   { path: "counter", component: CounterComponent },
   { path: "timer", component: TimerComponent },
   { path: "interaction-parent-child", component: InteractionParentComponent },
@@ -20,7 +20,9 @@ const routes: Routes = [
   { path: "interaction-via-template", component: TemplateDemoComponent },
   { path: "dynamic-content-demo", component: DynamicContentDemoComponent },
   { path: "custom-component-demo", component: CustomComponentDemoComponent },
-{ path: "directive-container-demo", component: DirectiveContainerDemoComponent },
+  { path: "directive-container-demo", component: DirectiveContainerDemoComponent },
+  { path: "lazy-component-demo", loadChildren: () =>
+      import("./lazy-component-demo/lazy-component-demo.module").then( m => m.LazyComponentDemoModule) },
 ];
 
 @NgModule({

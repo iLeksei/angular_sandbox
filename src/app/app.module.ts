@@ -24,7 +24,6 @@ import { CountdownTimerComponent } from './local-var-interaction-demo/countdown-
 import { CountdownParentComponent } from './local-var-interaction-demo/countdown-parent/countdown-parent.component';
 import { MissionControlComponent } from './interaction-via-service/mission-control/mission-control.component';
 import { AstronautComponent } from './interaction-via-service/astronaut/astronaut.component';
-import { CardComponent } from './card/card.component';
 import { TemplateParentComponent } from './interaction-via-template/template-parent/template-parent.component';
 import { TemplateChildComponent } from './interaction-via-template/template-child/template-child.component';
 import { ZippyContentDirective } from './directives/zippy-content.directive';
@@ -43,6 +42,8 @@ import { DirectiveContainerDemoComponent } from './directive-container-demo/dire
 import {MatSelectModule} from "@angular/material/select";
 import { EventInterceptorDirectiveDirective } from './directive-container-demo/event-interceptor-directive.directive';
 import { HiddenDirective } from './directive-container-demo/hidden.directive';
+import {LazyComponentDemoModule} from "./lazy-component-demo/lazy-component-demo.module";
+import {CardModule} from "./card/card.module";
 
 @NgModule({
   declarations: [
@@ -57,7 +58,6 @@ import { HiddenDirective } from './directive-container-demo/hidden.directive';
     CountdownParentComponent,
     MissionControlComponent,
     AstronautComponent,
-    CardComponent,
     TemplateParentComponent,
     TemplateChildComponent,
     ZippyContentDirective,
@@ -89,6 +89,8 @@ import { HiddenDirective } from './directive-container-demo/hidden.directive';
     FormsModule,
     CommonModule,
     HttpClientModule,
+    LazyComponentDemoModule,
+    CardModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false}
     ),
