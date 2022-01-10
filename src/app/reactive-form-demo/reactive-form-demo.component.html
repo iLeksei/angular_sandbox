@@ -1,0 +1,16 @@
+<app-card title="reactive-form-demo">
+  <form #reactiveFormDemo="ngForm" [formGroup]="formGroup">
+    <p>Form status: {{reactiveFormDemo.status}}</p>
+<!--    <mat-form-field appearance="standard">-->
+<!--      <mat-label>Username</mat-label>-->
+<!--      <input matInput id="username" placeholder="username" [formControl]="username">-->
+<!--    </mat-form-field>-->
+    <input id="username" placeholder="username" formControlName="username" required minlength="4"/>
+    <br/>
+    <input id="age" type="number" placeholder="age" formControlName="age" required min="1" max="100"/>
+    <br/>
+    <button id="reset-form" type="reset">Reset</button>
+    <br/>
+    <button id="fill-form" (click)="fillForm()" >Fill</button>
+  </form>
+</app-card>

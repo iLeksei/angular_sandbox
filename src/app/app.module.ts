@@ -17,7 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TimerComponent } from './timer/timer.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatInputModule} from "@angular/material/input";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { InteractionParentComponent } from './interaction-demo/interaction-parent/interaction-parent.component';
 import { InteractionChildComponent } from './interaction-demo/interaction-child/interaction-child.component';
 import { CountdownTimerComponent } from './local-var-interaction-demo/countdown-timer/countdown-timer.component';
@@ -44,6 +44,8 @@ import { EventInterceptorDirectiveDirective } from './directive-container-demo/e
 import { HiddenDirective } from './directive-container-demo/hidden.directive';
 import {LazyComponentDemoModule} from "./lazy-component-demo/lazy-component-demo.module";
 import {CardModule} from "./card/card.module";
+import { ReactiveFormDemoComponent } from './reactive-form-demo/reactive-form-demo.component';
+import { TemplateDrivenFormDemoComponent } from './template-driven-form-demo/template-driven-form-demo.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import {CardModule} from "./card/card.module";
     DirectiveContainerDemoComponent,
     EventInterceptorDirectiveDirective,
     HiddenDirective,
+    ReactiveFormDemoComponent,
+    TemplateDrivenFormDemoComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,6 +91,7 @@ import {CardModule} from "./card/card.module";
     MatSelectModule,
     MatInputModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
     LazyComponentDemoModule,

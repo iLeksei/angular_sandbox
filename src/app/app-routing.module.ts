@@ -9,6 +9,8 @@ import {TemplateDemoComponent} from "./interaction-via-template/template-demo/te
 import {DynamicContentDemoComponent} from "./dynamic-content-demo-components/dinamic-content-demo/dynamic-content-demo.component";
 import {CustomComponentDemoComponent} from "./custom-component-demo/custom-component-demo.component";
 import {DirectiveContainerDemoComponent} from "./directive-container-demo/directive-container-demo.component";
+import {ReactiveFormDemoComponent} from "./reactive-form-demo/reactive-form-demo.component";
+import {TemplateDrivenFormDemoComponent} from "./template-driven-form-demo/template-driven-form-demo.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -21,12 +23,14 @@ const routes: Routes = [
   { path: "dynamic-content-demo", component: DynamicContentDemoComponent },
   { path: "custom-component-demo", component: CustomComponentDemoComponent },
   { path: "directive-container-demo", component: DirectiveContainerDemoComponent },
+  { path: "reactive-form-demo", component: ReactiveFormDemoComponent },
+  { path: "template-driven-form-demo", component: TemplateDrivenFormDemoComponent },
   { path: "lazy-component-demo", loadChildren: () =>
       import("./lazy-component-demo/lazy-component-demo.module").then( m => m.LazyComponentDemoModule) },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {enableTracing: false})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
