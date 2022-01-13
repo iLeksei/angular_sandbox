@@ -46,6 +46,7 @@ import {LazyComponentDemoModule} from "./lazy-component-demo/lazy-component-demo
 import {CardModule} from "./card/card.module";
 import { ReactiveFormDemoComponent } from './reactive-form-demo/reactive-form-demo.component';
 import { TemplateDrivenFormDemoComponent } from './template-driven-form-demo/template-driven-form-demo.component';
+import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { TemplateDrivenFormDemoComponent } from './template-driven-form-demo/tem
     HiddenDirective,
     ReactiveFormDemoComponent,
     TemplateDrivenFormDemoComponent,
+    DynamicFormDemoComponent,
   ],
   imports: [
     BrowserModule,

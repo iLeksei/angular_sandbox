@@ -1,7 +1,9 @@
 <div class="page">
   <mat-card>
     <mat-card-title>{{title}}</mat-card-title>
-    <mat-card-subtitle *ngIf="subtitle">{{subtitle}}</mat-card-subtitle>
+    <ng-container *ngIf="subtitle">
+      <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+    </ng-container>
     <mat-card-content>
       <ng-content></ng-content>
     </mat-card-content>

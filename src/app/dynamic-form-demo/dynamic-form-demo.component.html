@@ -1,0 +1,53 @@
+<app-card title="dynamic form demo">
+  <form [formGroup]="formData" class="dynamic-form__form">
+    <div [formGroupName]="area.name" *ngFor="let area of formDto;">
+      <mat-card class="dynamic-form__area">
+        <mat-card-title>{{area.name || "Unknown area"}}</mat-card-title>
+        <ng-container *ngFor="let field of area.fields">
+          <mat-form-field class="dynamic-form__field" appearance="fill">
+            <mat-label>{{field.label || "Unknown field"}}</mat-label>
+            <input
+              matInput
+              [attr.type]="field.type || 'text'"
+              [attr.id]="area.name + '.' + field.name"
+              [attr.name]="field.name"
+              [formControlName]="field.name"
+            />
+          </mat-form-field>
+          <br/>
+        </ng-container>
+        <div [formArrayName]="block.name" *ngFor="let block of area.blocks;">
+          <mat-card class="dynamic-form__block">
+            <button mat-button-toggle (click)="addBlock(area.name, block.name)">+</button>
+            <mat-label>  {{block.name}}</mat-label>
+            <br/>
+            <ng-container *ngIf="(getBlock(area.name, block.name) !== null)">
+              <ng-container *ngFor="let field of (getBlock(area.name, block.name));let j = index">
+                <div [formGroupName]="j">
+                  <ng-container *ngFor="let fieldDto of block.fields">
+                    <mat-form-field class="dynamic-form__field" appearance="fill">
+                      <mat-label>{{fieldDto.label || "Unknown field"}}</mat-label>
+                      <input
+                        matInput
+                        [attr.type]="fieldDto.type || 'text'"
+                        [attr.id]="area.name + '.' + block.name + '.' + j +'.' + fieldDto.name"
+                        [attr.name]="fieldDto.name"
+                        [formControlName]="fieldDto.name"
+                      />
+                    </mat-form-field>
+                    <br/>
+                  </ng-container>
+                </div>
+              </ng-container>
+            </ng-container>
+          </mat-card>
+        </div>
+      </mat-card>
+      <br/>
+    </div>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+      <mat-button-toggle (click)="reset()">Reset</mat-button-toggle>
+      <mat-button-toggle (click)="onSubmit()">Save</mat-button-toggle>
+    </mat-button-toggle-group>
+  </form>
+</app-card>
