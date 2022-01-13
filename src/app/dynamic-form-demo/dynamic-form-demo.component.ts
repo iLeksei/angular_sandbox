@@ -34,7 +34,6 @@ export class DynamicFormDemoComponent implements OnInit {
       formData.setControl(area.name, areaFormGroup);
       area.blocks?.forEach( (block: FormBlock) => {
         if (block.fields?.length > 0) {
-          // const blockGroup = new FormGroup(this.getFieldControls(block.fields));
           areaFormGroup.setControl(block.name, new FormArray([]));
         }
       })
@@ -52,6 +51,9 @@ export class DynamicFormDemoComponent implements OnInit {
     return fieldsControls;
   }
 
+  /**
+   * todo custom validator with comparing field's data from different areas
+   */
   getValidators(field: FormField): ValidatorFn[] {
     const validators = [];
     field.max ? validators.push(Validators.max(field.max)) : null;
@@ -72,10 +74,8 @@ export class DynamicFormDemoComponent implements OnInit {
   }
 
   addBlock(areaName: string, blockName: string) {
-    console.log(`Trying to add new block: ${blockName} into the area ${areaName}`)
     if (areaName && blockName) {
-      // const blockData: FormArray = this.formData.get(areaName).get(blockName) as FormArray;
-      const blockData = this.formData.controls[areaName].controls[blockName];
+      const blockData = this.formData.get(areaName).get(blockName);
       const areaDto = this.formDto.find( (area: FormArea) => area.name === areaName);
       const  blockDto = areaDto?.blocks?.find( (block: FormBlock) => block.name === blockName);
       const fields = this.getFieldControls(blockDto?.fields || []);

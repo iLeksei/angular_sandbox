@@ -5,7 +5,7 @@
         <mat-card-title>{{area.name || "Unknown area"}}</mat-card-title>
         <ng-container *ngFor="let field of area.fields">
           <mat-form-field class="dynamic-form__field" appearance="fill">
-            <mat-label>{{field.label || "Unknown field"}}</mat-label>
+            <mat-label>{{field.type !== "date" ? (field.label || "Unknown field") : ""}}</mat-label>
             <input
               matInput
               [attr.type]="field.type || 'text'"
@@ -26,7 +26,7 @@
                 <div [formGroupName]="j">
                   <ng-container *ngFor="let fieldDto of block.fields">
                     <mat-form-field class="dynamic-form__field" appearance="fill">
-                      <mat-label>{{fieldDto.label || "Unknown field"}}</mat-label>
+                      <mat-label>{{fieldDto.type !== "date" ? (fieldDto.label || "Unknown field") : ""}}</mat-label>
                       <input
                         matInput
                         [attr.type]="fieldDto.type || 'text'"

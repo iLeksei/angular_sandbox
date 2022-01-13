@@ -48,10 +48,17 @@ export class InMemoryDataService implements InMemoryDbService {
         ]
       },
       {
-        name: "userAchievements",
-        fields: [],
+        name: "userBank",
+        fields: [
+          { name: "cardNumber", label: "card number", type: "number", validators: [] },
+          { name: "cardOpenDate", label: "card open date", type: "date", validators: [] },
+        ],
         blocks: [
-          { name: "achievements", fields: [ { name: "achievement", label: "achievement name", type: "text", validators: [] } ] }
+          { name: "currencies", fields: [
+              { name: "currency", label: "currency name", type: "text", validators: [] },
+              { name: "currencyAmount", label: "currency amount", type: "number", validators: [] },
+            ]
+          }
         ]
       }
     ]
