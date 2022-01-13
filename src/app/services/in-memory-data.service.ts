@@ -13,6 +13,7 @@ export interface FormField {
   errorMessage?: string,
   label: string,
   name: string,
+  dict?: {value: string, label: string}[],
 }
 
 export interface FormBlock {
@@ -45,6 +46,7 @@ export class InMemoryDataService implements InMemoryDbService {
         fields: [
           { type: "text",name: "username", label: "username", validators: ["required"], maxLength: 10, minLength: 2 },
           { type: "number", name: "age", label: "age", validators: ["required"], max: 100, min: 18 },
+          { type: "select", name: "country", label: "country", validators: ["required"],  },
         ]
       },
       {
@@ -55,7 +57,7 @@ export class InMemoryDataService implements InMemoryDbService {
         ],
         blocks: [
           { name: "currencies", fields: [
-              { name: "currency", label: "currency name", type: "text", validators: [] },
+              { name: "currency", label: "currency name", type: "select", validators: [], dict: [{value: "RUR", label: "RUR"}, {value: "USD", label: "USD"}]},
               { name: "currencyAmount", label: "currency amount", type: "number", validators: [] },
             ]
           }

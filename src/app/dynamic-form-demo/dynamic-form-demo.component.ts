@@ -4,6 +4,9 @@ import {DynamicFormService} from "./dynamic-form.service";
 import {Form, FormArray, FormBuilder, FormControl, FormGroup, Validator, ValidatorFn, Validators} from "@angular/forms";
 import {tap} from "rxjs";
 
+/**
+ * todo: to support select
+ */
 @Component({
   selector: 'app-dynamic-form-demo',
   templateUrl: './dynamic-form-demo.component.html',
