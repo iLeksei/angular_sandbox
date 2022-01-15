@@ -4,16 +4,12 @@
       <mat-card class="dynamic-form__area">
         <mat-card-title>{{area.name || "Unknown area"}}</mat-card-title>
         <ng-container *ngFor="let field of area.fields">
-          <mat-form-field class="dynamic-form__field" appearance="fill">
-            <mat-label>{{field.type !== "date" ? (field.label || "Unknown field") : ""}}</mat-label>
-            <input
-              matInput
-              [attr.type]="field.type || 'text'"
-              [attr.id]="area.name + '.' + field.name"
-              [attr.name]="field.name"
-              [formControlName]="field.name"
-            />
-          </mat-form-field>
+          <app-dynamic-form-field
+            [form]="formData"
+            [id]="area.name + field.name"
+            [formField]="field"
+            [control]="formData.get(area.name).get(field.name)"
+          ></app-dynamic-form-field>
           <br/>
         </ng-container>
         <div [formArrayName]="block.name" *ngFor="let block of area.blocks;">
@@ -25,16 +21,12 @@
               <ng-container *ngFor="let field of (getBlock(area.name, block.name));let j = index">
                 <div [formGroupName]="j">
                   <ng-container *ngFor="let fieldDto of block.fields">
-                    <mat-form-field class="dynamic-form__field" appearance="fill">
-                      <mat-label>{{fieldDto.type !== "date" ? (fieldDto.label || "Unknown field") : ""}}</mat-label>
-                      <input
-                        matInput
-                        [attr.type]="fieldDto.type || 'text'"
-                        [attr.id]="area.name + '.' + block.name + '.' + j +'.' + fieldDto.name"
-                        [attr.name]="fieldDto.name"
-                        [formControlName]="fieldDto.name"
-                      />
-                    </mat-form-field>
+                    <app-dynamic-form-field
+                      [form]="formData"
+                      [id]="area.name + '.' + block.name + '.' + j +'.' + fieldDto.name"
+                      [formField]="fieldDto"
+                      [control]="getFieldControl(area.name, fieldDto.name, block.name, j)"
+                    ></app-dynamic-form-field>
                     <br/>
                   </ng-container>
                 </div>

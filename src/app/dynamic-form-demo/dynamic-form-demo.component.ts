@@ -1,7 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArea, FormBlock, FormField} from "../services/in-memory-data.service";
 import {DynamicFormService} from "./dynamic-form.service";
-import {Form, FormArray, FormBuilder, FormControl, FormGroup, Validator, ValidatorFn, Validators} from "@angular/forms";
+import {
+  Form,
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  FormGroupDirective,
+  Validator,
+  ValidatorFn,
+  Validators
+} from "@angular/forms";
 import {tap} from "rxjs";
 
 /**
@@ -10,7 +20,7 @@ import {tap} from "rxjs";
 @Component({
   selector: 'app-dynamic-form-demo',
   templateUrl: './dynamic-form-demo.component.html',
-  styleUrls: ['./dynamic-form-demo.component.css']
+  styleUrls: ['./dynamic-form-demo.component.css'],
 })
 export class DynamicFormDemoComponent implements OnInit {
 
@@ -84,7 +94,21 @@ export class DynamicFormDemoComponent implements OnInit {
       const fields = this.getFieldControls(blockDto?.fields || []);
       blockData.push(new FormGroup(fields));
     }
+
+
   }
+
+  getFieldControl(area: string, field: string, block?: string, idx?: number): FormControl{
+    let areaGroup: FormGroup = this.formData.get(area);
+    if (!block || !idx) {
+      return areaGroup.controls[field] as FormControl;
+    } else {
+      const arrayControl = areaGroup.controls[block] as FormArray;
+      const blockControl = arrayControl.controls[idx] as FormGroup;
+      return blockControl.controls[field] as FormControl;
+    }
+  }
+
 
   getBlock(areaName: string, blockName: string) {
     if (!areaName || !blockName) { return null; }

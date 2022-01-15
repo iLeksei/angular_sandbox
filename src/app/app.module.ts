@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -47,6 +47,9 @@ import {CardModule} from "./card/card.module";
 import { ReactiveFormDemoComponent } from './reactive-form-demo/reactive-form-demo.component';
 import { TemplateDrivenFormDemoComponent } from './template-driven-form-demo/template-driven-form-demo.component';
 import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.component';
+import { DynamicFormFieldComponent } from './dynamic-form-demo/components/dynamic-form-field/dynamic-form-field.component';
+import {MatOptionModule} from "@angular/material/core";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -77,6 +80,7 @@ import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.
     ReactiveFormDemoComponent,
     TemplateDrivenFormDemoComponent,
     DynamicFormDemoComponent,
+    DynamicFormFieldComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,6 +95,8 @@ import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.
     MatGridListModule,
     MatCheckboxModule,
     MatSelectModule,
+    MatOptionModule,
+    MatFormFieldModule,
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
@@ -103,6 +109,7 @@ import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.
     ),
 ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

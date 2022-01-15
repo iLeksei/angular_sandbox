@@ -1,0 +1,26 @@
+<div appearance="fill">
+  <ng-contaner [ngSwitch]="formField">
+    <ng-container
+      *ngSwitchCase="['text','number','date','checkbox'].indexOf(formField.type) !== -1 ? formField : !formField">
+      <mat-form-field class="dynamic-form__field" appearance="fill">
+        <mat-label>{{formField.type !== "date" ? (formField.label || "Unknown field") : ""}}</mat-label>
+        <input
+          matInput
+          [attr.type]="formField.type || 'text'"
+          [attr.id]="id"
+          [attr.name]="formField.name"
+          [formControl]="control"
+        />
+      </mat-form-field>
+    </ng-container>
+    <ng-container *ngSwitchCase="'select'">
+      <mat-form-field class="dynamic-form__field" appearance="fill">
+        <mat-label>{{formField.label}}</mat-label>
+        <mat-select [attr.id]="id" [formControl]="control">
+          <mat-option *ngFor="let option of formField.dict" [attr.value]="option.value">{{option.label}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </ng-container>
+    <ng-container *ngSwitchDefault>Code Default</ng-container>
+  </ng-contaner>
+</div>
