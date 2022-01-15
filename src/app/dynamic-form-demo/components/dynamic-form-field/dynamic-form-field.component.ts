@@ -12,8 +12,8 @@ export class DynamicFormFieldComponent implements OnInit{
 
   @Input() formField!: FormField;
   @Input() id!: string;
-  @Input() form!: FormGroup;
   @Input() control: any;
+  @Input() dict!: {value: string, label: string}[];
 
   constructor() { }
 

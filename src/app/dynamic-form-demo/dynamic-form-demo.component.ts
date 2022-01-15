@@ -105,6 +105,7 @@ export class DynamicFormDemoComponent implements OnInit {
     } else {
       const arrayControl = areaGroup.controls[block] as FormArray;
       const blockControl = arrayControl.controls[idx] as FormGroup;
+      console.log(blockControl.controls, field)
       return blockControl.controls[field] as FormControl;
     }
   }

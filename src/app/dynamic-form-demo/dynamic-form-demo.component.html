@@ -5,10 +5,10 @@
         <mat-card-title>{{area.name || "Unknown area"}}</mat-card-title>
         <ng-container *ngFor="let field of area.fields">
           <app-dynamic-form-field
-            [form]="formData"
             [id]="area.name + field.name"
             [formField]="field"
-            [control]="formData.get(area.name).get(field.name)"
+            [control]="getFieldControl(area.name, field.name)"
+            [dict]="field.dict || []"
           ></app-dynamic-form-field>
           <br/>
         </ng-container>
@@ -22,10 +22,10 @@
                 <div [formGroupName]="j">
                   <ng-container *ngFor="let fieldDto of block.fields">
                     <app-dynamic-form-field
-                      [form]="formData"
                       [id]="area.name + '.' + block.name + '.' + j +'.' + fieldDto.name"
                       [formField]="fieldDto"
                       [control]="getFieldControl(area.name, fieldDto.name, block.name, j)"
+                      [dict]="fieldDto.dict || []"
                     ></app-dynamic-form-field>
                     <br/>
                   </ng-container>

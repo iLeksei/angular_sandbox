@@ -46,7 +46,7 @@ export class InMemoryDataService implements InMemoryDbService {
         fields: [
           { type: "text",name: "username", label: "username", validators: ["required"], maxLength: 10, minLength: 2 },
           { type: "number", name: "age", label: "age", validators: ["required"], max: 100, min: 18 },
-          { type: "select", name: "country", label: "country", validators: ["required"],  },
+          { type: "select", name: "country", label: "country", validators: ["required"], dict: []  },
         ]
       },
       {
