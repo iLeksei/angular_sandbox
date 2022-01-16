@@ -18,13 +18,13 @@
             <mat-label>  {{block.name}}</mat-label>
             <br/>
             <ng-container *ngIf="(getBlock(area.name, block.name) !== null)">
-              <ng-container *ngFor="let field of (getBlock(area.name, block.name));let j = index">
+              <ng-container  *ngFor="let formGroup of (getBlock(area.name, block.name));let j = index">
                 <div [formGroupName]="j">
                   <ng-container *ngFor="let fieldDto of block.fields">
                     <app-dynamic-form-field
                       [id]="area.name + '.' + block.name + '.' + j +'.' + fieldDto.name"
                       [formField]="fieldDto"
-                      [control]="getFieldControl(area.name, fieldDto.name, block.name, j)"
+                      [control]="formGroup.controls[fieldDto.name]"
                       [dict]="fieldDto.dict || []"
                     ></app-dynamic-form-field>
                     <br/>

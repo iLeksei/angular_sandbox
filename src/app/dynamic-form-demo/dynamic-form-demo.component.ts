@@ -99,14 +99,11 @@ export class DynamicFormDemoComponent implements OnInit {
   }
 
   getFieldControl(area: string, field: string, block?: string, idx?: number): FormControl{
-    let areaGroup: FormGroup = this.formData.get(area);
+    let areaGroup: FormGroup = this.formData.controls[area];
     if (!block || !idx) {
       return areaGroup.controls[field] as FormControl;
     } else {
-      const arrayControl = areaGroup.controls[block] as FormArray;
-      const blockControl = arrayControl.controls[idx] as FormGroup;
-      console.log(blockControl.controls, field)
-      return blockControl.controls[field] as FormControl;
+      return this.formData.get(area).get(block).controls[idx].get(field);
     }
   }
 

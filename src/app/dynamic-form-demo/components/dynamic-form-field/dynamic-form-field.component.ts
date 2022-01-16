@@ -1,12 +1,14 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormField} from "../../../services/in-memory-data.service";
-import {ControlContainer, FormArray, FormControl, FormGroup, FormGroupDirective} from "@angular/forms";
+import {ControlContainer, FormGroupDirective} from "@angular/forms";
 
 @Component({
   selector: 'app-dynamic-form-field',
   templateUrl: './dynamic-form-field.component.html',
   styleUrls: ['./dynamic-form-field.component.css'],
-  viewProviders: [{provide: ControlContainer, useExisting: FormGroupDirective}]
+  viewProviders: [
+    {provide: ControlContainer, useExisting: FormGroupDirective},
+  ]
 })
 export class DynamicFormFieldComponent implements OnInit{
 
