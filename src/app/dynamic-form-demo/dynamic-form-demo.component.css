@@ -1,0 +1,20 @@
+.dynamic-form__form {
+  display: flex;
+  flex-direction: row;
+}
+
+.dynamic-form__area {
+  margin: 0 2px 0 2px;
+}
+
+.dynamic-form__area-title {
+  font-size: 16px;
+}
+
+.dynamic-form__block {
+  margin-bottom: 4px;
+}
+
+.dynamic-form__block-container {
+  margin-top: 10px;
+}

@@ -11,6 +11,7 @@
           [attr.name]="formField.name"
           [formControl]="control"
         />
+        <mat-hint *ngIf="formField.type === 'date'">{{formField.label}}</mat-hint>
       </mat-form-field>
     </ng-container>
     <ng-container *ngSwitchCase="formField.type === 'select' ? formField : !formField">
