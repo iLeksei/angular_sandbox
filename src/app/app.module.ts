@@ -50,6 +50,7 @@ import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.
 import { DynamicFormFieldComponent } from './dynamic-form-demo/components/dynamic-form-field/dynamic-form-field.component';
 import {MatOptionModule} from "@angular/material/core";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import { FieldErrorComponent } from './dynamic-form-demo/components/field-error/field-error.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     TemplateDrivenFormDemoComponent,
     DynamicFormDemoComponent,
     DynamicFormFieldComponent,
+    FieldErrorComponent,
   ],
   imports: [
     BrowserModule,

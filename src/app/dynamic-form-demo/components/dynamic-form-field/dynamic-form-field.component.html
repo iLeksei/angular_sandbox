@@ -11,6 +11,9 @@
           [attr.name]="formField.name"
           [formControl]="control"
         />
+        <mat-hint *ngIf="!control.valid && control.touched">
+          <app-field-error [errors]="control.errors" [field]="formField"></app-field-error>
+        </mat-hint>
         <mat-hint *ngIf="formField.type === 'date'">{{formField.label}}</mat-hint>
       </mat-form-field>
     </ng-container>

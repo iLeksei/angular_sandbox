@@ -1,0 +1,4 @@
+<p *ngIf="errors?.['required']">field is required</p>
+<p *ngIf="errors?.['minlength']">must be at least {{field.minLength}} characters long.</p>
+<p *ngIf="errors?.['maxlength']">must be less than {{field.maxLength}} characters.</p>
+<p *ngIf="errors?.['lengthRange']">{{errors?.['lengthRange']}}</p>

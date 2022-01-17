@@ -2,17 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {FormArea, FormBlock, FormField} from "../services/in-memory-data.service";
 import {DynamicFormService} from "./dynamic-form.service";
 import {
-  Form,
   FormArray,
   FormBuilder,
   FormControl,
   FormGroup,
-  FormGroupDirective,
-  Validator,
   ValidatorFn,
   Validators
 } from "@angular/forms";
 import {tap} from "rxjs";
+import {CustomValidators} from "./validators";
 
 /**
  * todo: to support select
@@ -52,14 +50,12 @@ export class DynamicFormDemoComponent implements OnInit {
       })
       this.formData = formData;
     })
-    console.log(this.formData);
-    console.log(this.formData.getRawValue())
   }
 
   getFieldControls(fields: FormField[]): { [k in string]: FormControl } {
     const fieldsControls: any = {};
     fields.forEach( (field) => {
-      fieldsControls[field.name] = new FormControl("", this.getValidators(field));
+      fieldsControls[field.name] = new FormControl("", Validators.compose(this.getValidators(field)));
     })
     return fieldsControls;
   }
@@ -69,10 +65,26 @@ export class DynamicFormDemoComponent implements OnInit {
    */
   getValidators(field: FormField): ValidatorFn[] {
     const validators = [];
-    field.max ? validators.push(Validators.max(field.max)) : null;
-    field.min ? validators.push(Validators.min(field.min)) : null;
-    field.maxLength ? validators.push(Validators.maxLength(field.maxLength)) : null;
-    field.minLength ? validators.push(Validators.maxLength(field.minLength)) : null;
+    if (field.max) {
+      validators.push(Validators.max(field.max))
+    }
+
+    if (field.min) {
+      validators.push(Validators.min(field.min))
+    }
+
+    if (field.maxLength && field.maxLength) {
+      validators.push(CustomValidators.lengthRange(field.minLength, field.maxLength));
+    } else if (field.minLength) {
+      validators.push(Validators.minLength(field.minLength));
+    } else if (field.maxLength) {
+      validators.push(Validators.maxLength(field.maxLength));
+
+    }
+
+    if (field.validators.includes("required")) {
+      validators.push(Validators.required)
+    }
     return validators;
   }
 

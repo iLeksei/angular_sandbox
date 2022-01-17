@@ -1,13 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormField} from "../../../services/in-memory-data.service";
-import {ControlContainer, FormGroupDirective} from "@angular/forms";
 
 @Component({
   selector: 'app-dynamic-form-field',
   templateUrl: './dynamic-form-field.component.html',
   styleUrls: ['./dynamic-form-field.component.css'],
   viewProviders: [
-    {provide: ControlContainer, useExisting: FormGroupDirective},
+    // {provide: ControlContainer, useExisting: FormGroupDirective},
   ]
 })
 export class DynamicFormFieldComponent implements OnInit{
@@ -20,5 +19,6 @@ export class DynamicFormFieldComponent implements OnInit{
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.control)
   }
 }

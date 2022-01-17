@@ -39,6 +39,6 @@
   </form>
   <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
     <mat-button-toggle (click)="reset()">Reset</mat-button-toggle>
-    <mat-button-toggle (click)="onSubmit()">Save</mat-button-toggle>
+    <mat-button-toggle [disabled]="formData.status === 'INVALID'" (click)="onSubmit()">Save</mat-button-toggle>
   </mat-button-toggle-group>
 </app-card>
