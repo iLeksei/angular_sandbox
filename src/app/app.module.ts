@@ -34,7 +34,7 @@ import { AdBannerComponent } from './dynamic-content-demo-components/ad-banner/a
 import { AdComponent } from './dynamic-content-demo-components/ad/ad.component';
 import {DynamicContentDemoComponent} from "./dynamic-content-demo-components/dinamic-content-demo/dynamic-content-demo.component";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {InMemoryDataService} from "./services/in-memory-data.service";
 import { PopupComponent } from './custom-component-demo/popup/popup.component';
 import { CustomComponentDemoComponent } from './custom-component-demo/custom-component-demo.component';
@@ -51,6 +51,11 @@ import { DynamicFormFieldComponent } from './dynamic-form-demo/components/dynami
 import {MatOptionModule} from "@angular/material/core";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { FieldErrorComponent } from './dynamic-form-demo/components/field-error/field-error.component';
+import {HttpLoggerInterceptorService} from "./services/http-logger-interceptor.service";
+
+export const httpInterceptorProviders = [
+  { provide: HTTP_INTERCEPTORS, useClass: HttpLoggerInterceptorService, multi: true }
+];
 
 @NgModule({
   declarations: [
@@ -110,7 +115,7 @@ import { FieldErrorComponent } from './dynamic-form-demo/components/field-error/
       InMemoryDataService, {dataEncapsulation: false}
     ),
 ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -11,6 +11,7 @@ import {
 } from "@angular/forms";
 import {tap} from "rxjs";
 import {CustomValidators} from "./validators";
+import {HttpLoggerInterceptorService} from "../services/http-logger-interceptor.service";
 
 /**
  * todo: to support select
@@ -26,7 +27,8 @@ export class DynamicFormDemoComponent implements OnInit {
   public formData: any = new FormGroup({});
 
   constructor(private dynamicFormService: DynamicFormService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              httpLoggerInterceptorService: HttpLoggerInterceptorService) { }
 
   ngOnInit(): void {
     this.dynamicFormService.getDynamicFormData()
@@ -79,7 +81,10 @@ export class DynamicFormDemoComponent implements OnInit {
       validators.push(Validators.minLength(field.minLength));
     } else if (field.maxLength) {
       validators.push(Validators.maxLength(field.maxLength));
+    }
 
+    if (field.condition) {
+      validators.push(CustomValidators.condition(this.formData, field.condition));
     }
 
     if (field.validators.includes("required")) {

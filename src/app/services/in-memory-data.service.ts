@@ -14,6 +14,7 @@ export interface FormField {
   label: string,
   name: string,
   dict?: {value: string, label: string}[],
+  condition?: string,
 }
 
 export interface FormBlock {
@@ -47,6 +48,7 @@ export class InMemoryDataService implements InMemoryDbService {
           { type: "text",name: "username", label: "username", validators: ["required"], maxLength: 10, minLength: 2 },
           { type: "number", name: "age", label: "age", validators: ["required"], max: 100, min: 18 },
           { type: "select", name: "country", label: "country", validators: ["required"], dict: []  },
+          { type: "date", name: "birth date", label: "birthDate", validators: ["required"], dict: [], condition: "value < currentDate"  },
         ]
       },
       {
