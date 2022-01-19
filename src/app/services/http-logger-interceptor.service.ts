@@ -10,7 +10,7 @@ export class HttpLoggerInterceptorService implements HttpInterceptor{
   constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log(req.url)
+    console.log("HTTP LOGGER/URL: " + req.url)
     return next.handle(req);
   }
 }

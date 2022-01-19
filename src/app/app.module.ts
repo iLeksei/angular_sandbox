@@ -52,6 +52,7 @@ import {MatOptionModule} from "@angular/material/core";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { FieldErrorComponent } from './dynamic-form-demo/components/field-error/field-error.component';
 import {HttpLoggerInterceptorService} from "./services/http-logger-interceptor.service";
+import { HttpClientDemoComponent } from './http-client-demo/http-client-demo.component';
 
 export const httpInterceptorProviders = [
   { provide: HTTP_INTERCEPTORS, useClass: HttpLoggerInterceptorService, multi: true }
@@ -88,6 +89,7 @@ export const httpInterceptorProviders = [
     DynamicFormDemoComponent,
     DynamicFormFieldComponent,
     FieldErrorComponent,
+    HttpClientDemoComponent,
   ],
   imports: [
     BrowserModule,
@@ -111,9 +113,9 @@ export const httpInterceptorProviders = [
     HttpClientModule,
     LazyComponentDemoModule,
     CardModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false}
-    ),
+    // HttpClientInMemoryWebApiModule.forRoot(
+      // InMemoryDataService, {dataEncapsulation: false}
+    // ),
 ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],

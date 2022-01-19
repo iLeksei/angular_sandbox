@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {HttpLoggerInterceptorService} from "./services/http-logger-interceptor.service";
 
 @Component({
   selector: 'app-root',

@@ -12,6 +12,7 @@ import {DirectiveContainerDemoComponent} from "./directive-container-demo/direct
 import {ReactiveFormDemoComponent} from "./reactive-form-demo/reactive-form-demo.component";
 import {TemplateDrivenFormDemoComponent} from "./template-driven-form-demo/template-driven-form-demo.component";
 import {DynamicFormDemoComponent} from "./dynamic-form-demo/dynamic-form-demo.component";
+import {HttpClientDemoComponent} from "./http-client-demo/http-client-demo.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: "reactive-form-demo", component: ReactiveFormDemoComponent },
   { path: "template-driven-form-demo", component: TemplateDrivenFormDemoComponent },
   { path: "dynamic-form-demo", component: DynamicFormDemoComponent },
+  { path: "http-client-demo", component: HttpClientDemoComponent },
   { path: "lazy-component-demo", loadChildren: () =>
       import("./lazy-component-demo/lazy-component-demo.module").then( m => m.LazyComponentDemoModule) },
 ];
