@@ -2,23 +2,24 @@
   <a routerLink="/" mat-icon-button color="primary" aria-label="home-icon">
     <mat-icon>home</mat-icon>
   </a>
-  <button class="m-font-size" mat-button [matMenuTriggerFor]="aboveMenu">Components</button>
+
+  <button class="m-font-size" mat-button [matMenuTriggerFor]="aboveMenu" i18n>Components</button>
   <mat-menu #aboveMenu="matMenu" yPosition="above">
-    <a routerLink="/counter" mat-menu-item>Counter</a>
-    <a routerLink="/timer" mat-menu-item>Timer</a>
-    <a routerLink="/dynamic-form" mat-menu-item>Dynamic form</a>
-    <a routerLink="/interaction-parent-child" mat-menu-item>Interaction parent-child</a>
-    <a routerLink="/local-var-interaction" mat-menu-item>Local var Interaction</a>
-    <a routerLink="/interaction-via-service" mat-menu-item>Interaction via service</a>
-    <a routerLink="/interaction-via-template" mat-menu-item>Interaction via template</a>
-    <a routerLink="/dynamic-content-demo" mat-menu-item>Dynamic Components</a>
-    <a routerLink="/custom-component-demo" mat-menu-item>Custom Component (popup)</a>
-    <a routerLink="/directive-container-demo" mat-menu-item>Container with directive demo</a>
-    <a routerLink="/lazy-component-demo" mat-menu-item>Lazy Component</a>
-    <a routerLink="/reactive-form-demo" mat-menu-item>Reactive Form Demo</a>
-    <a routerLink="/template-driven-form-demo" mat-menu-item>Template-Driven Form Demo</a>
-    <a routerLink="/dynamic-form-demo" mat-menu-item>Dynamic Form Demo</a>
-    <a routerLink="/http-client-demo" mat-menu-item>Http client Demo</a>
+    <a routerLink="/counter" mat-menu-item i18n>Counter</a>
+    <a routerLink="/timer" mat-menu-item i18n>Timer</a>
+    <a routerLink="/dynamic-form" mat-menu-item i18n>Dynamic form</a>
+    <a routerLink="/interaction-parent-child" mat-menu-item i18n>Interaction parent-child</a>
+    <a routerLink="/local-var-interaction" mat-menu-item i18n>Local var Interaction</a>
+    <a routerLink="/interaction-via-service" mat-menu-item i18n>Interaction via service</a>
+    <a routerLink="/interaction-via-template" mat-menu-item i18n>Interaction via template</a>
+    <a routerLink="/dynamic-content-demo" mat-menu-item i18n>Dynamic Components</a>
+    <a routerLink="/custom-component-demo" mat-menu-item i18n>Custom Component (popup)</a>
+    <a routerLink="/directive-container-demo" mat-menu-item i18n>Container with directive demo</a>
+    <a routerLink="/lazy-component-demo" mat-menu-item i18n>Lazy Component</a>
+    <a routerLink="/reactive-form-demo" mat-menu-item i18n>Reactive Form Demo</a>
+    <a routerLink="/template-driven-form-demo" mat-menu-item i18n>Template-Driven Form Demo</a>
+    <a routerLink="/dynamic-form-demo" mat-menu-item i18n>Dynamic Form Demo</a>
+    <a routerLink="/http-client-demo" mat-menu-item i18n>Http client Demo</a>
   </mat-menu>
 </nav>
 <mat-divider></mat-divider>

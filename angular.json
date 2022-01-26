@@ -5,6 +5,13 @@
   "projects": {
     "angular-sandbox": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ru": "src/locale/messages.ru.xlf",
+          "en": "src/locale/messages.xlf"
+        }
+      },
       "schematics": {
         "@schematics/angular:application": {
           "strict": true
@@ -30,7 +37,8 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "localize": true
           },
           "configurations": {
             "production": {
@@ -61,6 +69,12 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "ru": {
+              "localize": ["ru"]
+            },
+            "en": {
+              "localize": ["en"]
             }
           },
           "defaultConfiguration": "production"
@@ -73,6 +87,12 @@
             },
             "development": {
               "browserTarget": "angular-sandbox:build:development"
+            },
+            "en": {
+              "browserTarget": "angular-sandbox:build:en"
+            },
+            "ru": {
+              "browserTarget": "angular-sandbox:build:ru"
             }
           },
           "defaultConfiguration": "development"

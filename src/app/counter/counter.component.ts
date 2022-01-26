@@ -9,6 +9,8 @@ export class CounterComponent implements OnInit {
 
   counter: number = 0;
   title: string = "Counter";
+  date = new Date();
+  currency = "100.00"
 
   constructor() { }
 
