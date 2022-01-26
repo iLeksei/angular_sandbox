@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="1831139682192909712" datatype="html">
+        <source>Components</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3958504940664351773" datatype="html">
+        <source>Counter</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6083026006568353651" datatype="html">
+        <source>Timer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2255551672817588771" datatype="html">
+        <source>Dynamic form</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8338582280697326074" datatype="html">
+        <source>Interaction parent-child</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6094327446975888728" datatype="html">
+        <source>Local var Interaction</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3067377218142086409" datatype="html">
+        <source>Interaction via service</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9010386725420619081" datatype="html">
+        <source>Interaction via template</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3658328224254848453" datatype="html">
+        <source>Dynamic Components</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8518146941686823888" datatype="html">
+        <source>Custom Component (popup)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5929840543243660123" datatype="html">
+        <source>Container with directive demo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5126817677005712036" datatype="html">
+        <source>Lazy Component</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5410656193403600135" datatype="html">
+        <source>Reactive Form Demo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="988701363158689214" datatype="html">
+        <source>Template-Driven Form Demo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2827377094439405338" datatype="html">
+        <source>Dynamic Form Demo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5916497349071664035" datatype="html">
+        <source>Http client Demo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
