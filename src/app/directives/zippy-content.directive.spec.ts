@@ -15,7 +15,7 @@ describe('ZippyContentDirective', () => {
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      declarations: [AdDirective, TestComponent],
+      declarations: [ZippyContentDirective, TestComponent],
     }).createComponent(TestComponent);
 
     fixture.detectChanges();

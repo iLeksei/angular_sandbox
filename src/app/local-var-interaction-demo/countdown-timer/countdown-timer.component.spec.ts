@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, fakeAsync, flush, TestBed, tick} from '@angular/core/testing';
 
 import { CountdownTimerComponent } from './countdown-timer.component';
 
@@ -19,7 +19,12 @@ describe('CountdownTimerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  fit('should start timer', fakeAsync(() => {
+    let comp = new CountdownTimerComponent();
+    expect(comp.counter).toEqual(10)
+    comp.start();
+    tick(11000)
+    expect(comp.counter).toEqual(0)
+    flush();
+  }));
 });
